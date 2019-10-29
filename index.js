@@ -20,7 +20,8 @@ var knex = require("knex")({
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
-server.listen(3000, function() {
+var port = process.env.PORT || 3000;
+server.listen(port, function() {
   console.log("%s listening at %s", server.name, server.url);
 });
 
